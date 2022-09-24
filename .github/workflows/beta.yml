@@ -1,0 +1,19 @@
+name: Package and release
+on:
+  push:
+    tags:
+      - '**beta*'
+      - '**alpha*'
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}  # "GITHUB_TOKEN" is a secret always provided to the workflow
+                                                 # for your own token, the name cannot start with "GITHUB_"
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 50
+      - name: Package and release for Classic
+        uses: BigWigsMods/packager@master
