@@ -1,0 +1,7 @@
+## Interface: 30400
+## Title: TotemBarFix
+## Author:  Xianghar
+## Version: @project-version@
+## X-LoadOn-Class: Shaman
+
+TotemBarFix.lua
